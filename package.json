@@ -1,0 +1,81 @@
+{
+  "name": "jlw-makefile",
+  "displayName": "jlw-makefile",
+  "description": "Build Makefiles",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jwillia3/jlw-makefile.git"
+  },
+  "publisher": "Jerry Lee Williams Jr",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "build",
+    "Makefile",
+    "makefile"
+  ],
+  "activationEvents": [
+    "onCommand:jlw-makefile.build",
+    "onCommand:jlw-makefile.rebuild",
+    "onCommand:jlw-makefile.cancel"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "jlw-makefile.build",
+        "title": "Build Makefile"
+      },
+      {
+        "command": "jlw-makefile.rebuild",
+        "title": "Rebuild Makefile"
+      },
+      {
+        "command": "jlw-makefile.cancel",
+        "title": "Cancel Makefile Build"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "jlw-makefile.build",
+        "key": "f7"
+      },
+      {
+        "command": "jlw-makefile.rebuild",
+        "key": "ctrl+f7"
+      },
+      {
+        "command": "jlw-makefile.cancel",
+        "key": "ctrl+shift+f7"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.70.0",
+    "@types/glob": "^7.2.0",
+    "@types/mocha": "^9.1.1",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.31.0",
+    "@typescript-eslint/parser": "^5.31.0",
+    "eslint": "^8.20.0",
+    "glob": "^8.0.3",
+    "mocha": "^10.0.0",
+    "typescript": "^4.7.4",
+    "ts-loader": "^9.3.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "@vscode/test-electron": "^2.1.5"
+  }
+}
